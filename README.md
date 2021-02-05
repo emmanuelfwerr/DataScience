@@ -1,6 +1,6 @@
 # Data Science Projects
 
-This repository showcases Data Science projects of personal interest as well as projects completed as part of the curriculum of two online programs:
+This repository showcases Data Science projects of personal interest and projects completed as part of the curriculums of two online programs:
 - [Udacity's Machine Learning with Pytorch](https://www.udacity.com/course/intro-to-machine-learning-nanodegree--nd229). A course developed in collaboration with Kaggle and AWS where I learned foundational machine learning algorithms, starting with data cleaning and supervised models. Then, moved on to exploring deep and unsupervised learning while getting practical experience at each step of the way by applying my skills to code exercises and projects.
 - [Udacity's Data Analyst Nanodegree](https://www.udacity.com/course/data-analyst-nanodegree--nd002). A course developed in collaboration with Kaggle where I advanced my programming skills and refined my ability to work with messy, complex datasets. I learned how to manipulate and prepare data for analysis, and create visualizations for data exploration. Most importantly, I learned how to use your my skills to tell a story with data.
 
@@ -22,7 +22,7 @@ This repository showcases Data Science projects of personal interest as well as 
 7. [Advanced Data Visualizations](https://github.com/emmanuelfwerr/DataAnalysis/tree/master/Advanced%20Data%20Visualizations)
 8. [Sakila DVDrental Database Analysis with SQL](https://github.com/emmanuelfwerr/DataAnalysis/tree/master/Sakila%20DVDrental%20Database%20Analysis%20with%20SQL)
 9. [Analyzing Bikeshare Data with Python](https://github.com/emmanuelfwerr/DataAnalysis/tree/master/Analyzing%20Bikeshare%20Data%20with%20Python)
-10. [Case Studies](https://github.com/emmanuelfwerr/DataAnalysis/tree/master/Case%20Studies)
+0. [Case Studies](https://github.com/emmanuelfwerr/DataAnalysis/tree/master/Case%20Studies)
    - [Fuel Economy](https://github.com/emmanuelfwerr/DataAnalysis/tree/master/Case%20Studies/Fuel%20Economy)
    - [Wine Properties and Ratings](https://github.com/emmanuelfwerr/DataAnalysis/tree/master/Case%20Studies/Wine%20Properties%20and%20Ratings)
    
