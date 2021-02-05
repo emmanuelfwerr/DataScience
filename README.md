@@ -5,8 +5,8 @@ This repository showcases Data Science projects of personal interest and project
 - [Udacity's Data Analyst Nanodegree](https://www.udacity.com/course/data-analyst-nanodegree--nd002). A course developed in collaboration with Kaggle where I advanced my programming skills and refined my ability to work with messy, complex datasets. I learned how to manipulate and prepare data for analysis, and create visualizations for data exploration. Most importantly, I learned how to use your my skills to tell a story with data.
 
 ### Index
-1. [Finding Donors for CharityML](https://github.com/emmanuelfwerr/MachineLearning/tree/master/FindingDonorsProject)(Supervised Learning)
-2. [Identifying Customer Segments](https://github.com/emmanuelfwerr/MachineLearning/tree/master/IdentifyCustomerSegmentsProject)(Unsupervised Learning)
+1. [Finding Donors for CharityML](https://github.com/emmanuelfwerr/MachineLearning/tree/master/FindingDonorsProject) (Supervised Learning)
+2. [Identifying Customer Segments](https://github.com/emmanuelfwerr/MachineLearning/tree/master/IdentifyCustomerSegmentsProject) (Unsupervised Learning)
 3. [Short Exercises](https://github.com/emmanuelfwerr/MachineLearning/tree/master/ShortExercises)
    - [`Feature Scaling`](https://github.com/emmanuelfwerr/MachineLearning/tree/master/ShortExercises/FeatureScaling)
    - [`Linear Regression in scikit-learn`](https://github.com/emmanuelfwerr/MachineLearning/tree/master/ShortExercises/Linear%20Regression%20in%20scikit-learn)
