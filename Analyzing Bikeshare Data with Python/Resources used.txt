@@ -1,0 +1,11 @@
+https://www.geeksforgeeks.org/python-pandas-series-str-cat-to-concatenate-string/
+
+https://datatofish.com/left-right-mid-pandas/
+
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_string.html
+
+https://pandas.pydata.org/pandas-docs/stable/user_guide/groupby.html
+
+https://stackoverflow.com/questions/19991591/typeerror-float-object-is-not-subscriptable
+
+https://github.com/xhlow/udacity-bikeshare-project

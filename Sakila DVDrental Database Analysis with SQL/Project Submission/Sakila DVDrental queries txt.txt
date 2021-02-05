@@ -1,0 +1,314 @@
+﻿Sakila DVDrental Database
+Analysis Using PostgreSQL
+Udacity SQL Project
+May 17th, 2020
+  
+  
+
+
+
+by
+Emmanuel F. Werr
+
+
+
+
+
+
+
+
+First Slide
+
+
+Most Popular Days of the Week for Rentals and Returns
+WITH t1 AS        (SELECT r.inventory_id, 
+                                         r.rental_id, 
+                                         DATE_PART('dow', r.rental_date) rental_day_week, 
+                                         DATE_PART('dow', r.return_date) return_day_week
+                        FROM rental r
+                        JOIN inventory i
+                        ON i.inventory_id = r.inventory_id
+                        JOIN film f
+                        ON f.film_id = i.film_id
+                        WHERE return_date IS NOT NULL),
+                        
+         t2 AS  (SELECT rental_day_week,
+                                return_day_week,
+                                COUNT(rental_id) OVER(PARTITION BY rental_day_week) AS rental_day_count,
+                                COUNT(rental_id) OVER(PARTITION BY return_day_week) AS return_day_count
+                     FROM t1
+                     ORDER BY 1, 2)
+                         
+SELECT rental_day_week,
+           rental_day_count,
+           return_day_week,
+           return_day_count
+FROM t2
+GROUP BY 1, 3, 2, 4
+ORDER BY 1, 3
+
+
+Weekend vs. Weekday Rental Popularity
+WITH t1 AS        (SELECT c.name genre, 
+                                         r.inventory_id, 
+                                         r.rental_id, 
+                                         DATE_PART('dow', r.rental_date) rental_day_week,
+                                         DATE_PART('dow', r.return_date) return_day_week
+                        FROM rental r
+                        JOIN inventory i
+                        ON i.inventory_id = r.inventory_id
+                        JOIN film f
+                        ON f.film_id = i.film_id
+                        JOIN film_category fc
+                        ON fc.film_id = f.film_id
+                        JOIN category c
+                        ON c.category_id = fc.category_id 
+                        WHERE return_date IS NOT NULL),
+
+
+         t2 AS        (SELECT genre, 
+                                        rental_day_week,
+                        COUNT(*) rental_count 
+                        FROM t1
+                        GROUP BY 1, 2
+                        ORDER BY 1, 2, 3),
+                        
+         t3 AS        (SELECT genre,
+                                    CASE WHEN rental_day_week >=1 AND rental_day_week <=4 THEN 'Weekday' ELSE 'Weekend' END AS Week_Part, 
+                                    rental_count
+                        FROM t2),
+                        
+         t4 AS  (SELECT genre,
+                                    week_part,
+                                    SUM(rental_count) total_rentals
+                        FROM t3
+                        GROUP BY 1, 2
+                        ORDER BY 1, 2)
+                        
+SELECT genre,
+           CASE WHEN week_part = 'Weekday' THEN total_rentals ELSE NULL END AS Weekday_rentals,
+           CASE WHEN week_part = 'Weekend' THEN total_rentals ELSE NULL END AS Weekend_rentals
+FROM t4
+
+
+Weekend vs. Weekday Return Popularity
+WITH t1 AS        (SELECT c.name genre, 
+                                         r.inventory_id, 
+                                         r.rental_id, 
+                                         DATE_PART('dow', r.rental_date) rental_day_week,
+                                         DATE_PART('dow', r.return_date) return_day_week
+                        FROM rental r
+                        JOIN inventory i
+                        ON i.inventory_id = r.inventory_id
+                        JOIN film f
+                        ON f.film_id = i.film_id
+                        JOIN film_category fc
+                        ON fc.film_id = f.film_id
+                        JOIN category c
+                        ON c.category_id = fc.category_id 
+                        WHERE return_date IS NOT NULL),
+
+
+         t2 AS        (SELECT genre, 
+                                        return_day_week,
+                        COUNT(*) return_count 
+                        FROM t1
+                        GROUP BY 1, 2
+                        ORDER BY 1, 2, 3),
+                        
+         t3 AS        (SELECT genre,
+                                    CASE WHEN return_day_week >=1 AND return_day_week <=4 THEN 'Weekday' ELSE 'Weekend' END AS Week_Part, 
+                                    return_count
+                        FROM t2),
+                        
+         t4 AS  (SELECT genre,
+                                    week_part,
+                                    SUM(return_count) total_returns
+                        FROM t3
+                        GROUP BY 1, 2
+                        ORDER BY 1, 2)
+                        
+SELECT genre,
+           CASE WHEN week_part = 'Weekday' THEN total_returns ELSE NULL END AS Weekday_returns,
+           CASE WHEN week_part = 'Weekend' THEN total_returns ELSE NULL END AS Weekend_returns
+FROM t4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Second Slide
+
+
+Average Days Kept
+WITH t1 AS                (SELECT DATE_TRUNC('day', rental_date) rental_day, DATE_TRUNC('day', return_date) return_day
+                                FROM rental
+                                WHERE return_date IS NOT NULL),
+                                
+         t2 AS                 (SELECT DATE_PART('day', return_day - rental_day) days_kept
+                                FROM t1)
+                                
+SELECT ROUND(AVG(days_kept)) average_days_kept
+FROM t2
+
+
+Average Days Late by Genre
+WITH t1 AS                (SELECT inventory_id, rental_id, DATE_TRUNC('day', rental_date) rental_day, DATE_TRUNC('day', return_date) return_day
+                                FROM rental
+                                WHERE return_date IS NOT NULL),
+                                
+     t2 AS                (SELECT c.name genre, rental_id, f.film_id, f.rental_duration, DATE_PART('day', return_day - rental_day) days_kept
+                                FROM t1
+                                JOIN inventory i
+                                ON i.inventory_id = t1.inventory_id
+                                JOIN film f
+                                ON f.film_id = i.film_id
+                                JOIN film_category fc
+                                ON fc.film_id = f.film_id
+                                JOIN category c
+                                ON c.category_id = fc.category_id),
+                                
+         t3 AS            (SELECT film_id, genre, (days_kept - rental_duration) AS net_days_over
+                                FROM t2)
+                                
+SELECT genre,
+           AVG(net_days_over) AS avg_days_over
+FROM t3
+GROUP BY 1
+ORDER BY 2 DESC
+
+
+Total Days Early or Late Return
+WITH t1 AS                (SELECT inventory_id, rental_id, DATE_TRUNC('day', rental_date) rental_day, DATE_TRUNC('day', return_date) return_day
+                                FROM rental
+                                WHERE return_date IS NOT NULL),
+                                
+     t2 AS                (SELECT c.name genre, rental_id, f.film_id, f.rental_duration, DATE_PART('day', return_day - rental_day) days_kept
+                                FROM t1
+                                JOIN inventory i
+                                ON i.inventory_id = t1.inventory_id
+                                JOIN film f
+                                ON f.film_id = i.film_id
+                                JOIN film_category fc
+                                ON fc.film_id = f.film_id
+                                JOIN category c
+                                ON c.category_id = fc.category_id),
+                                
+         t3 AS            (SELECT film_id, genre, (days_kept - rental_duration) AS net_days_over
+                        FROM t2)
+                                
+SELECT net_days_over,
+           COUNT(*) times_
+FROM t3
+GROUP BY 1
+ORDER BY 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Third Slide
+
+
+Unreturned Movies and Total Owed by Genre
+WITH t1 AS (SELECT cat.name genre,
+                   COUNT(*) OVER(PARTITION BY r.customer_id) AS unreturned_movies,
+               SUM(f.replacement_cost) OVER(PARTITION BY r.customer_id) AS dollars_owed
+                 FROM rental r
+                           JOIN customer c
+                           ON c.customer_id = r.customer_id
+                           JOIN inventory i
+                           ON i.inventory_id = r.inventory_id
+                           JOIN film f
+                           ON f.film_id = i.film_id
+                           JOIN film_category fc
+                           ON fc.film_id = f.film_id
+                           JOIN category cat
+                           ON cat.category_id = fc.category_id
+                           WHERE return_date IS NULL
+                           ORDER BY 2 DESC, 3 DESC)
+SELECT genre, 
+   COUNT(*) AS unreturned_movies,
+   SUM(dollars_owed) AS dollars_owed
+FROM t1
+GROUP BY 1
+ORDER BY 2 DESC
+
+
+Unreturned Movies and Total Owed by Customer
+SELECT r.customer_id, 
+   c.first_name, 
+   C.last_name,
+   COUNT(*) unreturned_movies, 
+   SUM(f.replacement_cost) dollars_owed
+FROM rental r
+JOIN customer c
+ON c.customer_id = r.customer_id
+JOIN inventory i
+ON i.inventory_id = r.inventory_id
+JOIN film f
+ON f.film_id = i.film_id
+WHERE return_date IS NULL
+GROUP BY 1, 2, 3
+ORDER BY 4 DESC, 5 DESC
+Fourth Slide
+
+
+Top Customers ordered by Movies Rented per Day Active
+WITH t1 AS        (SELECT c.customer_id,
+                                    CONCAT(c.first_name, ' ', c.last_name) AS full_name,
+                                    COUNT(r.rental_id) AS movies_rented,
+                                    SUM(p.amount) AS total_spent,
+                                    DATE_PART('day', MAX(DATE_TRUNC('day',r.rental_date)) - MIN(DATE_TRUNC('day',r.rental_date))) AS active_days
+                           FROM customer c
+                        JOIN rental r
+                        ON r.customer_id = c.customer_id
+                        JOIN payment p
+                        ON p.rental_id = r.rental_id
+                        GROUP BY 1, 2
+                        ORDER BY 3 DESC)
+                        
+SELECT customer_id, 
+           full_name,
+           movies_rented, 
+           total_spent, 
+           active_days, 
+           movies_rented/active_days AS movies_per_active_day,
+           total_spent/active_days AS dollars_per_active_day
+FROM t1
+ORDER BY 6 DESC, 7 DESC
+
+
+* Active days was chosen to be the period of time (in days) from each customer’s first rental to their last.
