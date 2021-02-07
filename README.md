@@ -2,7 +2,7 @@
 
 This repository showcases Data Science projects of personal interest and projects completed as part of the curriculums of two online programs:
 - [Udacity's Machine Learning with Pytorch](https://www.udacity.com/course/intro-to-machine-learning-nanodegree--nd229). A course developed in collaboration with Kaggle and AWS where I learned foundational machine learning algorithms, starting with data cleaning and supervised models. Then, moved on to exploring deep and unsupervised learning while getting practical experience at each step of the way by applying my skills to code exercises and projects.
-- [Udacity's Data Analyst Nanodegree](https://www.udacity.com/course/data-analyst-nanodegree--nd002). A course developed in collaboration with Kaggle where I advanced my programming skills and refined my ability to work with messy, complex datasets. I learned how to manipulate and prepare data for analysis, and create visualizations for data exploration. Most importantly, I learned how to use your my skills to tell a story with data.
+- [Udacity's Data Analyst Nanodegree](https://www.udacity.com/course/data-analyst-nanodegree--nd002). A course developed in collaboration with Kaggle where I advanced my programming skills and refined my ability to work with messy, complex datasets. I learned how to manipulate and prepare data for analysis, and create visualizations for data exploration. Most importantly, I learned how to use my skills to tell a story with data.
 
 ### Index
 1. [Finding Donors for CharityML](https://github.com/emmanuelfwerr/DataScience/tree/main/FindingDonorsProject) (Supervised Learning)
@@ -31,9 +31,9 @@ Each folder should be accompanied by some form of documentation.
 ### Background
 Hello!
 
-My name is Emmanuel Werr and welcome to my Data Science repo! A little bit about me. I did my undergraduate at The Pennsylvania State University where I majored in Electrical Engineering with an emphasis on embedded systems and digital signal processing. Halfway through my college career I discovered my passion for utilizing software to build datasets that allowed me to solve problems and make cool graphs. 
+My name is Emmanuel Werr and welcome to my Data Science repo! A little bit about me. I did my undergraduate at Pennsylvania State University where I majored in Electrical Engineering with an emphasis on embedded systems and digital signal processing. Halfway through my college career, I discovered my passion for utilizing software to build datasets that allowed me to solve problems and make cool graphs. 
 
-I like to focus developing software for whatever problems come my way, automating my life wherever I can and conducting analysis on topics that I am passionate about!
+I like to focus on developing software for whatever problems come my way, automating my life wherever I can, and conducting analysis on topics that I am passionate about!
 
 ### Contact Me
 
