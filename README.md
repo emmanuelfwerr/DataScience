@@ -31,7 +31,7 @@ Each folder should be accompanied by some form of documentation.
 ### Background
 Hello!
 
-My name is Emmanuel Werr and welcome to my Machine Learning repo! A little bit about me. I did my undergraduate at The Pennsylvania State University where I majored in Electrical Engineering with an emphasis on embedded systems and digital signal processing. Halfway through my college career I discovered my passion for utilizing software to build datasets that allowed me to solve problems and make cool graphs. 
+My name is Emmanuel Werr and welcome to my Data Science repo! A little bit about me. I did my undergraduate at The Pennsylvania State University where I majored in Electrical Engineering with an emphasis on embedded systems and digital signal processing. Halfway through my college career I discovered my passion for utilizing software to build datasets that allowed me to solve problems and make cool graphs. 
 
 I like to focus developing software for whatever problems come my way, automating my life wherever I can and conducting analysis on topics that I am passionate about!
 
