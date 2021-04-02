@@ -1,7 +1,7 @@
 # Data Science Projects
 
 This repository showcases Data Science projects of personal interest and projects completed as part of the curriculums of two online programs:
-- [Udacity's Machine Learning with Pytorch](https://www.udacity.com/course/intro-to-machine-learning-nanodegree--nd229). A course developed in collaboration with Kaggle and AWS where I learned foundational machine learning algorithms, starting with data cleaning and supervised models. Then, moved on to exploring deep and unsupervised learning while getting practical experience at each step of the way by applying my skills to code exercises and projects.
+- [Udacity's Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning-nanodegree--nd229). A course developed in collaboration with Kaggle and AWS where I learned foundational machine learning algorithms, starting with data cleaning and supervised models. Then, moved on to exploring deep and unsupervised learning while getting practical experience at each step of the way by applying my skills to code exercises and projects.
 - [Udacity's Data Analyst Nanodegree](https://www.udacity.com/course/data-analyst-nanodegree--nd002). A course developed in collaboration with Kaggle where I advanced my programming skills and refined my ability to work with messy, complex datasets. I learned how to manipulate and prepare data for analysis, and create visualizations for data exploration. Most importantly, I learned how to use my skills to tell a story with data.
 
 ### Index
