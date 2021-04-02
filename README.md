@@ -7,7 +7,7 @@ This repository showcases Data Science projects of personal interest and project
 ### Index
 1. [Finding Donors for CharityML](https://github.com/emmanuelfwerr/DataScience/tree/main/FindingDonorsProject) (Supervised Learning)
 2. [Identifying Customer Segments](https://github.com/emmanuelfwerr/DataScience/tree/main/IdentifyCustomerSegmentsProject) (Unsupervised Learning)
-3. [Short Exercises](https://github.com/emmanuelfwerr/DataScience/tree/main/ShortExercises)
+3. [Short ML Exercises](https://github.com/emmanuelfwerr/DataScience/tree/main/ShortExercises)
    - [`Feature Scaling`](https://github.com/emmanuelfwerr/DataScience/tree/main/ShortExercises/Feature%20Scaling)
    - [`Linear Regression in scikit-learn`](https://github.com/emmanuelfwerr/DataScience/tree/main/ShortExercises/Linear%20Regression%20in%20scikit-learn)
    - [`Multiple Linear regression`](https://github.com/emmanuelfwerr/DataScience/tree/main/ShortExercises/Multiple%20Linear%20Regression)
