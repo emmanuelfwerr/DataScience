@@ -31,7 +31,7 @@ Hello!
 
 My name is Emmanuel Werr and welcome to my Data Science repo! A little bit about me. I did my undergraduate at Pennsylvania State University where I majored in Electrical Engineering with an emphasis on embedded systems and digital signal processing. Halfway through my college career, I discovered my passion for utilizing software to build datasets that allowed me to solve problems and make cool graphs. 
 
-I like to focus on developing software for whatever problems come my way, automating my life wherever I can, and conducting analysis on topics that I am passionate about!
+I like to focus on developing software to aid my efforts in conducting analysis on topics that I am passionate about!
 
 ### Contact Me
 
