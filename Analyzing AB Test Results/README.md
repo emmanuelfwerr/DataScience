@@ -13,7 +13,7 @@ This project requires **Python 3.8** and the following Python libraries installe
 - [Pandas](http://pandas.pydata.org)
 - [matplotlib](http://matplotlib.org/)
 
-You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html), in this project we use [Anaconda](https://www.continuum.io/downloads). 
+We will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html), in this project we use [Anaconda](https://www.continuum.io/downloads). 
 
 ### Index
 
@@ -24,12 +24,12 @@ You will also need to have software installed to run and execute an [iPython Not
 ### Overview
 The project is divided into three main parts:
 #### Part I - Probability
-In this part, we compute statistics to find out the probability of converting users regardless of what page they interact with. These statistics were used to determine if any one of the pages led to more conversions.
+We begin by computing statistics to find out the probability of converting users regardless of what page they interact with. These statistics are used to determine if any one of the pages led to more conversions.
 #### Part II - A/B Test
-In this second part, hypothesis testing was conducted. We assume the old page is better unless the new page proves to be better by staying below a Type I error threshold rate of 5%. The data was bootstrapped and sampling distributions were determined for both pages. Conclusions were drawn on conversions for both pages by calculating p-values.
+Hypothesis testing was conducted. We assume the old page is better unless the new page proves to be better by staying below a Type I error threshold rate of 5%. The data was bootstrapped and sampling distributions were determined for both pages. Conclusions were drawn on conversions for both pages by calculating p-values.
 #### Part III - Regression
-Lastly, logistic regression was performed to confirm results of the previous steps. Null and alternative hypotheses associated with the regression model were stated and verified using the statsmodel library and it's methods.
+Logistic regression was performed to confirm the results of previous steps. Null and alternative hypotheses associated with the regression model were stated and verified using the statsmodel library and its methods.
 
 ### Results
-Based on the statistical tests used (Z-test, logistic regression model) the results point to an equal chance of converting users by both the new and old page. Given this information, we fail to reject the null hypothesis. My recommendation is that the e-commerce company should keep the old page. This will save them time and money while still performing as well as a new page would.
+The results of our statistical tests point to an equal chance of converting users by both pages. Given these results, we fail to reject the null hypothesis at the 5% threshold. My recommendation is that the e-commerce company should keep the old page. This will save them time and money, and will perform as well as a new page would.
 
