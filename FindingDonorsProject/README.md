@@ -3,8 +3,6 @@
 ## Project Overview
 In this project, we apply supervised learning techniques on data collected from the U.S. census to help CharityML (a fictitious charity organization) identify people most likely to donate to their cause. We first explore the data to learn how the census data is recorded. Next, apply a series of transformations and preprocessing techniques to manipulate the data into a workable format. We then evaluate several supervised learners on the data, and consider which is best suited for the solution. Afterwards, We optimize the selected model and present it as our solution to CharityML. Finally, we explore the chosen model and its predictions under the hood, to see just how well it's performing when considering the data it's given.
 
-This project is designed to get you acquainted with the many supervised learning algorithms available in sklearn, and to also provide for a method of evaluating just how each model works and performs on a certain type of data. It is important in machine learning to understand exactly when and where a certain algorithm should be used, and when one should be avoided.
-
 ### Environment
 
 This project requires **Python 3.8** and the following Python libraries installed:
@@ -14,7 +12,7 @@ This project requires **Python 3.8** and the following Python libraries installe
 - [matplotlib](http://matplotlib.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 
-You will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html), in this project we use [Anaconda](https://www.continuum.io/downloads). 
+We will also need to have software installed to run and execute an [iPython Notebook](http://ipython.org/notebook.html), in this project we use [Anaconda](https://www.continuum.io/downloads). 
 
 ### Index
 
