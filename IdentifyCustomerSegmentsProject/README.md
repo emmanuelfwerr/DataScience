@@ -13,7 +13,7 @@ This project requires **Python 3.8** and the following Python libraries installe
 - [matplotlib](http://matplotlib.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 
-You will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html), in this project we use [Anaconda](http://continuum.io/downloads).
+We will also need to have software installed to run and execute a [Jupyter Notebook](http://ipython.org/notebook.html), in this project we use [Anaconda](http://continuum.io/downloads).
 
 ### Index
 
