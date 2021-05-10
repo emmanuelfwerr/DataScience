@@ -1,7 +1,7 @@
 # Analyzing A/B Test Results 
 
 ## Project Overview
-A/B tests are very commonly performed by data analysts and data scientists. For this project, we will work to understand the results of an A/B test run by an e-commerce website. The company has developed a new web page in order to try and increase the number of users who "convert," meaning the number of users who decide to pay for the company's product. Our goal is to work through this notebook to help the company understand if they should implement the new page, keep the old page, or perhaps run the experiment longer to make their decision.You will be provided a dataset reflecting data collected from an experiment. Use statistical techniques to answer questions about the data and report your conclusions and recommendations in a report.
+A/B tests are very commonly performed by data analysts and data scientists. For this project, we will work to understand the results of an A/B test run by an e-commerce website. The company has developed a new web page in order to try and increase the number of users who "convert," meaning the number of users who decide to pay for the company's product. Our goal is to work through this notebook to help the company understand if they should implement the new page, keep the old page, or perhaps run the experiment longer to make their decision. We will be provided a dataset containing recorded data from an experiment and will use statistical techniques to answer questions about the data and report our conclusions and recommendations.
 
 This project's template features a quiz-like design and was provided by Udacity.
 
